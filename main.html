@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />     
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>课程表</title>
+		<script src="main.js" type="text/javascript" ></script>
+		<link href="main.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<table id="Sheet0">
+			<caption class="Caps">课程表输入框</caption>
+			<tr>
+				<td>课程名称:<input type="text" id="lesson" /></td>
+				<td>教室:<input type="text" id="room" class="Rooms" /></td>
+				<td>老师:<input type="text" id="teacher" class="Teachers" /></td>
+				<td>周数:<input type="select" id="weekStart" class="Weeks" />~<input type="text" id="weekEnd" class="Weeks" /></td>
+				<td>
+				<label>当前周数:</label>
+				<select id="WeekSelect" onmouseout=checkWk()>
+					<option value="0" selected="selected">无</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+				</select>
+				</td>
+			</tr>
+		</table>
+		<table id="Sheet1">
+			<caption class="Caps">课程表</caption>
+			<tr>
+				<th id="FirstRow"><input type="button" value="这里看食用说明~" onclick=startUp() /></th>
+				<th id="coloring26">周一</th>
+				<th id="coloring27">周二</th>
+				<th id="coloring28">周三</th>
+				<th id="coloring29">周四</th>
+				<th id="coloring30">周五</th>
+			</tr>
+			<tr class="Main">
+				<th id="coloring31">1~2节</th>
+				<td id="coloring1">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring1","1") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("1") />
+				</td>
+				<td id="coloring2">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring2","2") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("2") />
+				</td>
+				<td id="coloring3">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring3","3") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("3") />
+				</td>
+				<td id="coloring4">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring4","4") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("4") />
+				</td>
+				<td id="coloring5">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring5","5") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("5") />
+				</td>	
+			</tr>
+			<tr class="Main">
+				<th id="coloring32">3~4节</th>
+				<td id="coloring6">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring14","6") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("6") />
+				</td>
+				<td id="coloring7">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring15","7") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("7") />
+				</td>
+				<td id="coloring8">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring16","8") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("8") />
+				</td>
+				<td id="coloring9">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring17","9") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("9") />
+				</td>
+				<td id="coloring10">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring18","10") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("10") />
+				</td>
+			</tr>
+			<tr class="Main">
+				<th id="coloring33">5~6节</th>
+				<td id="coloring11">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring20","11") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("11") />
+				</td>
+				<td id="coloring12">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring21","12") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("12") />
+				</td>
+				<td id="coloring13">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring22","13") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("13") />
+				</td>
+				<td id="coloring14">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring23","14") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("14") />
+				</td>
+				<td id="coloring15">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring24","15") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("15") />
+				</td>
+			</tr>
+			<tr class="Main">
+				<th id="coloring34">7~8节</th>
+				<td id="coloring16">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring26","16") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("16") />
+				</td>
+				<td id="coloring17">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring27","17") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("17") />
+				</td>
+				<td id="coloring18">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring28","18") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("18") />
+				</td>
+				<td id="coloring19">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring29","19") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("19") />
+				</td>
+				<td id="coloring20">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring30","20") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("20") />
+				</td>
+			</tr>
+			<tr class="Main">
+				<th id="coloring35">9~11节/<br/>9~10节</th>
+				<td id="coloring21">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring32","21") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("21") />
+				</td>
+				<td id="coloring22">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring33","22") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("22") />
+				</td>
+				<td id="coloring23">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring34","23") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("23") />
+				</td>
+				<td id="coloring24">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring35","24") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("24") />
+				</td>
+				<td id="coloring25">
+					<input type="button" value="+" class="Plus" onclick=addLes("coloring36","25") />
+					<input type="button" value="-" class="Minus" onclick=removeLes("25") />
+				</td>
+			</tr>			
+		</table>
+		<table id="Skin">
+			<caption class="Caps">在我这改皮肤</caption>
+			<tr>
+				<td><input type="button" value="蓝绿（原版）" onclick=changeColor(0) /></td>
+				<td><input type="button" value="骚粉" onclick=changeColor(1) /></td>
+				<td><input type="button" value="蓝" onclick=changeColor(2) /></td>
+				<td><input type="button" value="红" onclick=changeColor(3) /></td>
+				<td><input type="button" value="原谅" onclick=changeColor(4) /></td>
+				<td><input type="button" value="烟灰" onclick=changeColor(5) /></td>
+				<td><input type="button" value="无边框" onclick=changeColor(6) /></td>
+			</tr>
+		</table>
+		<table id="Localizing">
+			<caption class="Caps">↓施工中↓</caption>
+			<tr>
+				<td><input type="button" value="保存" onclick=save() /></td>
+				<td><input type="button" value="读取" onclick=load() /></td>
+			</tr>
+		</table>
+	</body>
+</html>

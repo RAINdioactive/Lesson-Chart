@@ -1,0 +1,56 @@
+.Caps{
+	font-weight:bold;
+	font-family:"arial";
+}
+.Weeks{
+	display:inline-block;
+	width:15px;
+}
+.Rooms{
+	width:90px;
+}
+.Teachers{
+	width:112px;
+}
+.Main th{
+	height:120px;
+}
+.Plus{
+	position:absolute;
+	top:0;
+	left:0;
+}
+.Minus{
+	position:absolute;
+	top:0;
+	right:0;
+}
+#Sheet0{
+	left:50%;
+	margin:0px auto;
+	width:80%;
+	border:2px dotted #39F;
+	background-color:#6CF;
+}
+#Sheet1{
+	left:50%;
+	margin:0px auto;
+	height:40%;
+	width:90%;
+}
+#Sheet1 tr,#Sheet1 td,#Sheet1 th{
+	position:relative;
+	margin:0px;
+	border:2px solid #0C9;
+}
+#FirstRow{
+	width:10%;
+}
+#Skin{
+	left:50%;
+	margin:0px auto;
+}
+#Localizing{
+	left:50%;
+	margin:0px auto;
+}
