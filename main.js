@@ -4,20 +4,18 @@ function startUp(){
 //Les=Lesson
 function addLes(sBlockId,sDayNum){
 	var oTestNode=document.getElementById("LesText"+sDayNum);
-	if (oTestNode==null){
-		var oLesInfo=document.createElement("p");
-		oLesInfo.setAttribute("id","LesText"+sDayNum);
-		oLesInfo.style.position="absolute";
-		oLesInfo.style.left="46%";
-		oLesInfo.style.top="43%";
-		oLesInfo.style.margin="0";
-		var sInfoNode=document.createTextNode(document.getElementById("lesson").value+","+document.getElementById("room").value+","+document.getElementById("teacher").value+","+document.getElementById("weekStart").value+"~"+document.getElementById("weekEnd").value);
-		oLesInfo.appendChild(sInfoNode);
-		document.getElementById(sBlockId).appendChild(oLesInfo);
+	if (oTestNode!=null){
+		oTestNode.parentNode.removeChild(oTestNode);
 	}
-	else{
-		document.getElementById("LesText"+sDayNum).firstChild.innerText=document.getElementById("lesson").value+","+document.getElementById("room").value+","+document.getElementById("teacher").value+","+document.getElementById("weekStart").value+"~"+document.getElementById("weekEnd").value;
-	}
+	var oLesInfo=document.createElement("p");
+	oLesInfo.setAttribute("id","LesText"+sDayNum);
+	oLesInfo.style.position="absolute";
+	oLesInfo.style.left="46%";
+	oLesInfo.style.top="43%";
+	oLesInfo.style.margin="0";
+	var sInfoNode=document.createTextNode(document.getElementById("lesson").value+","+document.getElementById("room").value+","+document.getElementById("teacher").value+","+document.getElementById("weekStart").value+"~"+document.getElementById("weekEnd").value);
+	oLesInfo.appendChild(sInfoNode);
+	document.getElementById(sBlockId).appendChild(oLesInfo);
 }
 function removeLes(sDayNum){
 	var sLesText=document.getElementById("LesText"+sDayNum);
