@@ -13,7 +13,7 @@ function addLes(sBlockId,sDayNum){
 	oLesInfo.style.left="46%";
 	oLesInfo.style.top="43%";
 	oLesInfo.style.margin="0";
-	var sInfoNode=document.createTextNode(document.getElementById("lesson").value+","+document.getElementById("room").value+","+document.getElementById("teacher").value+","+document.getElementById("weekStart").value+"~"+document.getElementById("weekEnd").value);
+	var sInfoNode=document.createTextNode(document.getElementById("lesson").value+";"+document.getElementById("room").value+";"+document.getElementById("teacher").value+";"+document.getElementById("weekStart").value+"~"+document.getElementById("weekEnd").value);
 	oLesInfo.appendChild(sInfoNode);
 	document.getElementById(sBlockId).appendChild(oLesInfo);
 }
@@ -104,19 +104,21 @@ function changeColor(iInColor){
 }
 function save(){
 	var storage=window.localStorage;
-	var aTempLes
 	for (var iSi=1;iSi<=25;iSi++){
-		var oTestingNode=document.getElementById("LesText"+iSi)
-		if (oTestingNode!=null){
-			aTempLes=document.getElementById("LesText"+iSi).innerText;
-			storage.isi=sTempLes;
+		var oTestNode=document.getElementById("LesText"+iSi);
+		var aTempLes=new Array();
+		if (oTestNode!=null){
+			aTempLes[iSi]=document.getElementById("LesText"+iSi).innerHTML;
 		}
 	}
+	storage.LessonText=aTempLes;
 }
 function load(){
 	var storage=window.localStorage;
+	var aTempLes=new Array();
+	aTempLes=storage.split(",");
 	for (var iSi=1;iSi<=25;iSi++){
-		var oTestingNode=document.getElementById("LesText"+iSi)
+		var oTestingNode=document.getElementById("LesText"+iSi);
 		if (oTestingNode==null){
 			var oLesInfo=document.createElement("p");
 			oLesInfo.style.position="absolute";
