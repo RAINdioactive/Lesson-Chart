@@ -1,5 +1,5 @@
 function startUp(){
-	alert("食用方法：将信息填到上方信息栏，按单元格中的“+”将信息填入单元格。填入后可按“-”删去重填。若更改周数没用请重新点一次。现在已经没有error了[撒花(只要你不把它玩坏)]。");
+	alert("食用方法：将信息填到上方信息栏，按单元格中的“+”将信息填入单元格。填入后可按“-”删去重填。现在已经没有error了[撒花(只要你不把它玩坏)]。");
 }
 //Les=Lesson
 function addLes(sBlockId,sDayNum){
@@ -9,10 +9,7 @@ function addLes(sBlockId,sDayNum){
 	}
 	var oLesInfo=document.createElement("p");
 	oLesInfo.setAttribute("id","LesText"+sDayNum);
-	oLesInfo.style.position="absolute";
-	oLesInfo.style.left="46%";
-	oLesInfo.style.top="43%";
-	oLesInfo.style.margin="0";
+	oLesInfo.setAttribute("class","ClassText");
 	var sInfoNode=document.createTextNode(document.getElementById("lesson").value+";"+document.getElementById("room").value+";"+document.getElementById("teacher").value+";"+document.getElementById("weekStart").value+"~"+document.getElementById("weekEnd").value);
 	oLesInfo.appendChild(sInfoNode);
 	document.getElementById(sBlockId).appendChild(oLesInfo);
@@ -104,11 +101,12 @@ function changeColor(iInColor){
 }
 function save(){
 	var storage=window.localStorage;
+	var aTempLes=new Array();
 	for (var iSi=1;iSi<=25;iSi++){
 		var oTestNode=document.getElementById("LesText"+iSi);
-		var aTempLes=new Array();
 		if (oTestNode!=null){
-			aTempLes[iSi]=document.getElementById("LesText"+iSi).innerHTML;
+			aTempLes[iSi]=document.getElementById("LesText"+iSi).innerText;
+			alert(aTempLes[iSi]);
 		}
 	}
 	storage.LessonText=aTempLes;
