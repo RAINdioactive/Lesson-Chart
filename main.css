@@ -25,6 +25,11 @@
 	top:0;
 	right:0;
 }
+.ClassText{
+	display:block;
+	left:50%;
+	text-align:center;
+}
 #Sheet0{
 	left:50%;
 	margin:0px auto;
